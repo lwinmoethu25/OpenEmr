@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home"/>
+
+        <item
+            android:id="@+id/newpatient"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="New Patient"/>
+
+        <item
+            android:id="@+id/showpatient"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Show Patients"/>
+
+        <item
+            android:id="@+id/message"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Message"/>
+
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Setting" />
+
+         <item
+            android:id="@+id/exit"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Exit" />
+    </group>
+
+</menu>
