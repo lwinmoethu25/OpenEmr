@@ -23,13 +23,19 @@
         <activity android:name="com.lovespectre.lwin.custom.Preferences" android:label="Setting"></activity>
         <activity android:name="com.lovespectre.lwin.openemr.UpdatePatient"/>
 
+        <activity android:name="com.lovespectre.lwin.message.Messaging"/>
+        <activity android:name="com.lovespectre.lwin.message.SignUp"/>
+        <activity android:name="com.lovespectre.lwin.message.AddFriend"/>
+        <activity android:name="com.lovespectre.lwin.message.FriendList" android:label="Friends"/>
+        <activity android:name="com.lovespectre.lwin.message.UnApprovedFriendList"/>
 
+        <service android:name="com.lovespectre.lwin.message.services.IMService"></service>
 
     </application>
 
     <!--  Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.lovespectre.lwin.openemr;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -8,6 +10,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,11 +19,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.alertdialogpro.AlertDialogPro;
 import com.lovespectre.lwin.custom.Preferences;
+import com.lovespectre.lwin.message.Login;
+import com.lovespectre.lwin.message.SignUp;
 
 import static android.app.PendingIntent.getActivity;
 
@@ -31,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
+    public static Context ct;
+   /* public static final int SIGN_UP_ID = Menu.FIRST;
+    public static final int EXIT_APP_ID = Menu.FIRST + 2;*/
+    protected static final int NOT_CONNECTED_TO_SERVICE = 0;
+    protected static final int FILL_BOTH_USERNAME_AND_PASSWORD = 1;
+    protected static final int MAKE_SURE_USERNAME_AND_PASSWORD_CORRECT = 2;
+    protected static final int NOT_CONNECTED_TO_NETWORK = 3;
+    private Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ct=getApplicationContext();
 
 
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -89,11 +105,10 @@ public class MainActivity extends AppCompatActivity {
                 fts = fragmentManager.beginTransaction();
                 fts.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
                         .replace(R.id.flContent, Home.newInstance())
-                        .addToBackStack(null)
                         .commit();
-                menuItem.setChecked(true);
+                //menuItem.setChecked(true);
                 setTitle(menuItem.getTitle());
-                mDrawer.closeDrawers();
+
                 break;
 
             case R.id.newpatient:
@@ -103,9 +118,9 @@ public class MainActivity extends AppCompatActivity {
                         .replace(R.id.flContent, NewPatient.newInstance())
                         .addToBackStack(null)
                         .commit();
-                menuItem.setChecked(true);
+                //menuItem.setChecked(true);
                 setTitle(menuItem.getTitle());
-                mDrawer.closeDrawers();
+
                 break;
 
 
@@ -116,28 +131,29 @@ public class MainActivity extends AppCompatActivity {
                         .addToBackStack(null)
                         .commit();
 
-                menuItem.setChecked(true);
+                //menuItem.setChecked(true);
                 setTitle(menuItem.getTitle());
-                mDrawer.closeDrawers();
+
                 break;
 
             case R.id.message:
                 fts = fragmentManager.beginTransaction();
                 fts.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
-                        .replace(R.id.flContent, Message.newInstance())
+                        .replace(R.id.flContent, Login.newInstance())
                         .addToBackStack(null)
                         .commit();
+              /*  Intent i=new Intent(getApplicationContext(), Login.class);
+                startActivity(i);*/
+               //menuItem.setChecked(true);
+               setTitle(menuItem.getTitle());
 
-                menuItem.setChecked(true);
-                setTitle(menuItem.getTitle());
-                mDrawer.closeDrawers();
                 break;
 
             case R.id.setting:
-                Intent i = new Intent(getApplicationContext(), Preferences.class);
-                startActivity(i);
+                Intent i2 = new Intent(getApplicationContext(), Preferences.class);
+                startActivity(i2);
 
-                mDrawer.closeDrawers();
+
 
                 break;
 
@@ -150,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+
+        mDrawer.closeDrawers();
 
 
     }
@@ -167,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        //menu.add(0, SIGN_UP_ID, 0, R.string.sign_up);
         return true;
     }
 
@@ -200,6 +219,40 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        int message = -1;
+        switch (id) {
+            case NOT_CONNECTED_TO_SERVICE:
+                message = R.string.not_connected_to_service;
+                break;
+            case FILL_BOTH_USERNAME_AND_PASSWORD:
+                message = R.string.fill_both_username_and_password;
+                break;
+            case MAKE_SURE_USERNAME_AND_PASSWORD_CORRECT:
+                message = R.string.make_sure_username_and_password_correct;
+                break;
+            case NOT_CONNECTED_TO_NETWORK:
+                message = R.string.not_connected_to_network;
+                break;
+            default:
+                break;
+        }
+
+        if (message == -1) {
+            return null;
+        } else {
+            return new AlertDialogPro.Builder(getApplicationContext())
+                    .setMessage(message)
+                    .setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+    				/* User clicked OK so do some stuff */
+                        }
+                    })
+                    .create();
+        }
+    }
+
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -209,17 +262,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-
-        int count = getFragmentManager().getBackStackEntryCount();
-
-        if (count == 0) {
-            super.onBackPressed();
-            //additional code
-        } else {
-            getFragmentManager().popBackStack();
-        }
-
+    public static Context getContextOfApplication(){
+        return ct;
     }
+
+
 }

@@ -16,13 +16,6 @@
         <dex dex="/home/lwin/OpenEmr/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-1b947250d4e74f98b131f68546afe1267b9adfc0.jar" />
     </item>
     <item
-        jar="/home/lwin/OpenEmr/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.2.1/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
-        <dex dex="/home/lwin/OpenEmr/app/build/intermediates/pre-dexed/debug/classes-194d77d3b76ca97118349636c031ac1922fbb28a.jar" />
-    </item>
-    <item
         jar="/home/lwin/OpenEmr/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -51,32 +44,11 @@
         <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-e91df7dcff1b473c7f56bafc409830d051e71d22.jar" />
     </item>
     <item
-        jar="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/exploded-aar/com.github.fengdai/alertdialogpro-core/0.2.3/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e06255ce1023c60f103bbca1e8fe6981c849058d">
-        <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-f02d1a7257069cf687f0eeecb86377f5caed0e55.jar" />
-    </item>
-    <item
         jar="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
         <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-f19c10e9a89e24f83d093740801ab444c3079ad9.jar" />
-    </item>
-    <item
-        jar="/home/lwin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-efea8f716f28347698d7e87d38b6985fb0318e4b.jar" />
-    </item>
-    <item
-        jar="/home/lwin/OpenEmr/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/lwin/OpenEmr/app/build/intermediates/pre-dexed/debug/classes-a58519ad79b6a3bbf3c5eef6548a5c78e036e10c.jar" />
     </item>
     <item
         jar="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.2.1/classes.jar"
@@ -112,6 +84,34 @@
         revision="22.0.1"
         sha1="87973a148a7113f9a4eef799f22d0341d150ea33">
         <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-d270a6208f31a37b065e156c02d7ab4970446521.jar" />
+    </item>
+    <item
+        jar="/home/lwin/OpenEmr/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.2.1/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
+        <dex dex="/home/lwin/OpenEmr/app/build/intermediates/pre-dexed/debug/classes-194d77d3b76ca97118349636c031ac1922fbb28a.jar" />
+    </item>
+    <item
+        jar="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/exploded-aar/com.github.fengdai/alertdialogpro-core/0.2.3/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e06255ce1023c60f103bbca1e8fe6981c849058d">
+        <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-f02d1a7257069cf687f0eeecb86377f5caed0e55.jar" />
+    </item>
+    <item
+        jar="/home/lwin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/lwin/WorkOnProject/MaterialNavigationDrawer/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-efea8f716f28347698d7e87d38b6985fb0318e4b.jar" />
+    </item>
+    <item
+        jar="/home/lwin/OpenEmr/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/lwin/OpenEmr/app/build/intermediates/pre-dexed/debug/classes-a58519ad79b6a3bbf3c5eef6548a5c78e036e10c.jar" />
     </item>
 
 </items>

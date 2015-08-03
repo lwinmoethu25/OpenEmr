@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -91,7 +92,8 @@ public class NewPatient extends Fragment {
         final RadioButton rdfemale = (RadioButton) view.findViewById(R.id.radio_female);
         final Button btnCreate = (Button) view.findViewById(R.id.btnCreate);
 
-
+      
+        getActivity().setTitle("New Patient");
         btncalender.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -134,20 +136,22 @@ public class NewPatient extends Fragment {
             @Override
             public void onClick(View v) {
 
-                ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+             /*   ConnectivityManager connMgr = (ConnectivityManager) getActivity()
                         .getSystemService(Context.CONNECTIVITY_SERVICE);
 
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-                if (networkInfo != null && networkInfo.isConnected()) {
+                if (networkInfo != null && networkInfo.isConnected()) {*/
+
+
                     // fetch data
                     // creating new patient in background thread
                     new CreateNewPatient().execute();
 
-                } else {
+               /* } else {
                     // display error
                     Toast.makeText(getActivity(), "No host connection found", Toast.LENGTH_SHORT).show();
-                }
+                }*/
 
 
             }
@@ -155,6 +159,7 @@ public class NewPatient extends Fragment {
 
         return view;
     }
+
 
     // Background Async Task to Create new Patient
 

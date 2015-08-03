@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -26,6 +27,8 @@ import com.alertdialogpro.AlertDialogPro;
 public class Home extends Fragment {
 
     View view;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,6 +62,8 @@ public class Home extends Fragment {
         Button btnShow = (Button) view.findViewById(R.id.btnShow);
         TextView marquee = (TextView) view.findViewById(R.id.marqueeText);
         marquee.setSelected(true);
+
+        getActivity().setTitle("Open EMR");
 
         btnNew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +103,7 @@ public class Home extends Fragment {
         return view;
     }
 
-
+/*
     public void onBackPressed() {
         if (getActivity().isTaskRoot()) {
             AlertDialogPro.Builder builder = new AlertDialogPro.Builder(getActivity());
@@ -125,7 +130,7 @@ public class Home extends Fragment {
         } else {
             super.getActivity().onBackPressed();
         }
-    }
+    }*/
 
 
     public static Home newInstance() {

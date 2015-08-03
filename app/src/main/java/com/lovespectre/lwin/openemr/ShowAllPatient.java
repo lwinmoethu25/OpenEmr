@@ -12,10 +12,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -25,9 +24,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
-import android.widget.ListAdapter;
+
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -91,22 +90,26 @@ public class ShowAllPatient extends Fragment {
 
         url_all_patient = "http://" + ipAddress + "/openemr/get_all_patient.php";
 
+        getActivity().setTitle("Show Patient");
 
-        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+
+       /* ConnectivityManager connMgr = (ConnectivityManager) getActivity()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-        if (networkInfo != null && networkInfo.isConnected()) {
+        if (networkInfo != null && networkInfo.isConnected()) {*/
+
+
             // fetch data
             //Loading patients in Background Thread
             new LoadAllPatient().execute();
 
 
-        } else {
+       /* } else {
             // display error
             Toast.makeText(getActivity(), "No host connection found", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
 
         ListView lv = (ListView) view.findViewById(R.id.list);
