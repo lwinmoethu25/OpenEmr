@@ -35,7 +35,7 @@ public class SocketOperator extends Activity implements ISocketOperator {
 
     final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext);
     final String ipAddress = prefs.getString("IP", null);
-    String AUTHENTICATION_SERVER_ADDRESS = "http://" +ipAddress+ "/emr_chat/"; //TODO change to your WebAPI Address
+    String AUTHENTICATION_SERVER_ADDRESS = "http://" +ipAddress+ "/openemr/emr_chat/"; //TODO change to your WebAPI Address
     private static final String HTTP_REQUEST_FAILED = null;
     private int listeningPort = 0;
     private HashMap<InetAddress, Socket> sockets = new HashMap<InetAddress, Socket>();
