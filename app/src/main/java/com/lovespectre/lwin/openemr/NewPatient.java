@@ -49,6 +49,7 @@ public class NewPatient extends Fragment {
     EditText firstName;
     EditText lastName;
     EditText inputCity;
+    EditText birthDate;
     TextView txtDate;
     String sex;
 
@@ -85,16 +86,39 @@ public class NewPatient extends Fragment {
         firstName = (EditText) view.findViewById(R.id.firstName);
         lastName = (EditText) view.findViewById(R.id.lastName);
         inputCity = (EditText) view.findViewById(R.id.inputCity);
+        birthDate=(EditText) view.findViewById(R.id.showdate);
 
-        final ImageButton btncalender = (ImageButton) view.findViewById(R.id.calender);
+        //final ImageButton btncalender = (ImageButton) view.findViewById(R.id.calender);
         final RadioGroup rdsex = (RadioGroup) view.findViewById(R.id.rdsex);
         final RadioButton rdmale = (RadioButton) view.findViewById(R.id.radio_male);
         final RadioButton rdfemale = (RadioButton) view.findViewById(R.id.radio_female);
         final Button btnCreate = (Button) view.findViewById(R.id.btnCreate);
 
-      
+
         getActivity().setTitle("New Patient");
-        btncalender.setOnClickListener(new View.OnClickListener() {
+
+        birthDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog picker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+
+
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        txtDate = (TextView) getActivity().findViewById(R.id.showdate);
+                        txtDate.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+
+                    }
+                }, mYear, mMonth, mDay);
+                picker.show();
+
+            }
+        });
+       /* btncalender.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -114,7 +138,7 @@ public class NewPatient extends Fragment {
                 }, mYear, mMonth, mDay);
                 picker.show();
             }
-        });
+        });*/
 
         rdsex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

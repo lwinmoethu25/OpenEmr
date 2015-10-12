@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.lovespectre.lwin.custom.AViewFlipper
         android:id="@+id/AViewFlipper"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="3dp"
-        android:paddingBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:autoStart="true"
-        android:flipInterval="5000" >
+        android:flipInterval="5000"
+        android:paddingBottom="8dp"
+        android:paddingTop="3dp">
 
         <ImageView
             android:layout_width="fill_parent"
@@ -34,7 +36,6 @@
     </com.lovespectre.lwin.custom.AViewFlipper>
 
 
-
     <!-- <ImageView
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -45,52 +46,71 @@
         android:id="@+id/iptxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="  Enter IP Address:"
-        android:singleLine="true"
-        android:background="@drawable/textbox_normal"
-        android:paddingLeft="3dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textbox_normal"
+        android:hint="  Enter IP Address:"
+        android:paddingBottom="8dp"
+        android:paddingLeft="3dp"
+        android:paddingTop="8dp"
+        android:singleLine="true" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         android:weightSum="2">
 
-        <!--  Button to create a new patient screen -->
-        <Button android:id="@+id/btnNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Patient"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            />
 
-        <Button android:id="@+id/btnShow"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Patient"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            />
+            app:cardBackgroundColor="#4395a1"
+            app:cardCornerRadius="4dp">
+            <!--  Button to create a new patient screen -->
+            <Button
+                android:id="@+id/btnNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="New Patient"
+                android:textColor="@android:color/white" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#4395a1"
+            app:cardCornerRadius="4dp">
+
+            <Button
+                android:id="@+id/btnShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Show Patient"
+                android:textColor="@android:color/white"
+
+                />
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1"
         android:layout_gravity="bottom"
-        >
+        android:layout_weight="1"
+        android:orientation="horizontal" />
 
-
-    </LinearLayout>
 
     <TextView
 
@@ -98,17 +118,17 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:text=" OpenEmr Special Clinic | Address: No.7/110,Pazundaung Township,Yangon | Phone: 09250277385 "
-        android:textStyle="bold"
-        android:textColor="#4395a1"
-        android:singleLine="true"
         android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:paddingLeft="15dip"
-        android:paddingRight="15dip"
-        android:paddingBottom="15dip"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:freezesText="true"/>
+        android:freezesText="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingBottom="15dip"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text=" OpenEmr Special Clinic | Address: No.7/110,Pazundaung Township,Yangon | Phone: 09250277385 "
+        android:textColor="#4395a1"
+        android:textStyle="bold" />
 </LinearLayout>
