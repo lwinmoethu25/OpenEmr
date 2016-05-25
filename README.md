@@ -22,7 +22,7 @@ Please enter IP address of your host(openemr) in the editbox of the Main Activit
 ![ScreenShot3] (/APK/5.png)
 ![ScreenShot4] (/APK/6.png)
 
-###Copyright [2016] [Thamardaw]
+###Copyright 2016 Thamardaw
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
